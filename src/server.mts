@@ -1,9 +1,4 @@
-import Fastify from "fastify";
-const fastify = Fastify({ logger: true });
-
-fastify.get("/", function handler() {
-  return { hello: "world" };
-});
+import fastify from "./apollo.mjs";
 
 try {
   await fastify.listen({ port: 4000 });
