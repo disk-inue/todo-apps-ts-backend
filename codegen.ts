@@ -3,9 +3,11 @@ import type { CodegenConfig } from "@graphql-codegen/cli";
 
 const config: CodegenConfig = {
   schema: "src/schema/**/*.graphql",
-  emitLegacyCommonJSImports: false,
   generates: {
     "src/schema": defineConfig(),
+  },
+  hooks: {
+    afterOneFileWrite: ["prettier --write"],
   },
 };
 

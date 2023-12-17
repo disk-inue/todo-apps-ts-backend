@@ -1,0 +1,13 @@
+type Todo {
+  id: ID!
+  title: String!
+  completed: Boolean!
+}
+
+extend type Query {
+  todos: [Todo!]!
+}
+
+extend type Mutation {
+  createTodo(title: String!, completed: Boolean!): Todo!
+}
